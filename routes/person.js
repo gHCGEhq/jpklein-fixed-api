@@ -29,7 +29,7 @@ Person.prototype.greetPets = function(first_argument) {
   } else {
     this.petGreeting.push(this.greetPet(pet));
   }
-  return = this.petGreeting.join();
+  return this.petGreeting.join();
 };
 
 router.post('/', function(req, res, next) {
