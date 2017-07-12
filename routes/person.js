@@ -21,15 +21,16 @@ Person.prototype.greetPet = function(pet) {
 };
 
 Person.prototype.greetPets = function() {
-  this.petGreeting = [];
-  if (typeof this.pets === 'array') {
-    pets.forEach(function(pet) {
-      this.petGreeting.push(this.greetPet(pet));
+  var petGreeting = [],
+      that = this;
+  if (Array.isArray(this.pets)) {
+    this.pets.forEach(function(pet) {
+      petGreeting.push(that.greetPet(pet));
     });
   } else {
-    this.petGreeting.push(this.greetPet(this.pets));
+    petGreeting.push(that.greetPet(this.pets));
   }
-  return this.petGreeting.join();
+  return petGreeting.join(' ');
 };
 
 router.post('/', function(req, res, next) {
