@@ -17,7 +17,7 @@ Person.prototype.howManyApples = function() {
 };
 
 Person.prototype.greetPet = function(pet) {
-  return 'Hi ' + pet + ', YOU\'RE JUST SO FLUFFY! :O ';
+  return 'Hi ' + pet + ', YOU\'RE JUST SO FLUFFY! :O';
 };
 
 Person.prototype.greetPets = function() {
