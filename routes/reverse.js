@@ -6,9 +6,10 @@ function isNumber(str) {
 }
 
 router.get('/', function(req, res, next) {
-  var reversed = req.query.str.split('').reverse().join('');
+  var reversed = req.query.str.split('').reverse().join(''),
+      parsed = isNumber(req.query.str) ? parseInt(reversed) : reversed;
   res.json({
-  	reversed: (isNumber(req.query.str)) ? reversed : parseInt(reversed)
+    reversed: parsed
   });
 });
 
